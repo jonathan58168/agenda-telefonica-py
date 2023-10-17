@@ -2,39 +2,39 @@ agenda = {}
 
 while True:
     print('------- Agenda telefonica -------')
-    print('1 - Adicionar contato')
-    print('2 - Editar contato')
-    print('3 - Remover contato')
-    print('4 - Buscar contato')
-    print('5 - Listar todos')
-    print('6 - Sair')
+    print('1 - \033[34mAdicionar contato\033[m')
+    print('2 - \033[34mEditar contato\033[m')
+    print('3 - \033[34mRemover contato\033[m')
+    print('4 - \033[34mBuscar contato\033[m')
+    print('5 - \033[34mListar todos\033[m')
+    print('6 - \033[34mSair\033[m')
     print('----------------------------------')
     opc = int(input('\033[32mSelecione uma opção: \033[m'))
     if opc == 1:
         nome = input('\033[33mDigite o nome do contato: \033[m')
-        telefone = input('Digite o telefone do contato: ')
+        telefone = input('\033[33mDigite o telefone do contato: \033[m')
         agenda[nome] = telefone
-        print('Contato adicionado com sucesso!')
+        print('\033[35mContato adicionado com sucesso!\033[m')
     elif opc == 2:
-        nome = input('Digite o nome do contato: ')
+        nome = input('\033[33mDigite o nome do contato: \033[m')
         if nome in agenda:
-            agenda[nome] = input('Digite o novo telefone: ')
-            print('Telefone alterado com sucesso!')
+            agenda[nome] = input('\033[33mDigite o novo telefone: \033[m')
+            print('\033[35mTelefone alterado com sucesso!\033[m')
         else:
-            print('Contato não encontrado!')
+            print('\033[31mContato não encontrado!\033[m')
     elif opc == 3:
-        nome = input('Digite o nome do contato: ')
+        nome = input('\033[33mDigite o nome do contato: \033[m')
         if nome in agenda:
             del agenda[nome]
-            print('Contato removido com sucesso!')
+            print('\033[31mContato removido com sucesso!\033[m')
         else:
-            print('Contato não encontrado!')
+            print('\033[31mContato não encontrado!\033[m')
     elif opc == 4:
-        nome = input('Digite o nome do contato: ')
+        nome = input('\033[33mDigite o nome do contato: \033[m')
         if nome in agenda:
             print(f'Telefone do {nome}: {agenda[nome]}')
         else:
-            print('Contato não encontrado!')
+            print('\033[31mContato não encontrado!\033[m')
     elif opc == 5:
         print('------TODOS OS CONTATOS------')
         for nome in agenda:
